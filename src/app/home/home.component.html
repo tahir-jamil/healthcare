@@ -1,0 +1,107 @@
+<ActionBar backgroundColor="red" class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+
+<GridLayout backgroundColor="#ededf5">
+
+    <GridLayout  class="page-content" rows="*,auto" columns="*">
+
+        <!-- <GridLayout rows="*" columns="*,*" > -->
+        <WrapLayout >
+            <GridLayout   backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Emotions" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe84e;" color="#00ccff" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Engagement (flow)" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" color="#ff9e00" class="f-40  text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Relationships" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe90f;" class="f-40  text-center md-icon" textWrap="true"></Label>
+                    <Label text="Meaningfulness" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" color="#de1629" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Accomplishment" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" color="#4446b9" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Sleep" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+        </WrapLayout>
+
+
+
+        <!-- <GridLayout col="1" backgroundColor="white" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Emotions" class="p-t-20" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout> -->
+        <!-- </GridLayout> -->
+
+        <!-- <GridLayout row="1" rows="*" columns="*,*" style="margin-top:-10dp;">
+            <GridLayout backgroundColor="white" verticalAlignment="top" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Emotions" class="p-t-20" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+
+            <GridLayout col="1" backgroundColor="white" verticalAlignment="top" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Emotions" class="p-t-20" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout>
+
+        <GridLayout row="2" rows="*" columns="*,*" style="margin-top:-40dp;">
+            <GridLayout backgroundColor="white" verticalAlignment="top" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Emotions" class="p-t-20" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+
+            <GridLayout col="1" backgroundColor="white" verticalAlignment="top" [height]="boxHeight" [width]="boxWidth">
+                <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+                    <Label text="&#xe813;" class="f-40 green text-center md-icon" textWrap="true"></Label>
+                    <Label text="Positive Emotions" class="p-t-20" textWrap="true"></Label>
+                </StackLayout>
+            </GridLayout>
+        </GridLayout> -->
+    </GridLayout>
+
+    <GridLayout class="bottomBar" row="1" rows="*" columns="*" verticalAlignment="bottom">
+        <tu-bottom-bar></tu-bottom-bar>
+    </GridLayout>
+</GridLayout>

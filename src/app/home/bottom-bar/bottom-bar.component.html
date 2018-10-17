@@ -1,0 +1,8 @@
+
+
+<GridLayout    [height]="imgHeight" rows="*" class=" p-10-0-8-0" columns="*,*,*,*,*">
+  <StackLayout verticalAlignment="top" [col]="i" (tap)="onChangeIndex(i)" *ngFor='let item of bottomMenu; let i=index'>  
+    <Label text="&#xe80c;" [ngClass]="{'active' : activeIndexValue == i, 'inactive' : activeIndexValue != i}" class="f-20   md-icon" verticalAlignment="bottom" horizontalAlignment="center" textWrap="true"></Label>
+    <Label [text]="item.name"  [ngClass]="{'active' : activeIndexValue == i, 'inactive' : activeIndexValue != i}" class="f-12 " verticalAlignment="bottom" horizontalAlignment="center" textWrap="true"></Label>
+  </StackLayout>
+</GridLayout>

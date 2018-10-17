@@ -1,0 +1,27 @@
+
+// This is where the vast majority of your CSS code goes.// Import the theme
+@import '~nativescript-theme-core/scss/light';
+// Customize any of the theme’s variables here
+// Import the theme’s main ruleset.
+@import '~nativescript-theme-core/scss/index';
+
+
+
+
+.md-icon {
+    font-family: "Material Icons", "MaterialIcons-Regular","materialicons";
+}
+
+.sidedrawer-content {
+    padding: 20%;
+}
+
+.f-20 {
+    font-size: 20dp;
+}
+
+.sidedrawer {
+    background: linear-gradient(45deg,  #6cd331, #00c55d);
+
+    color: white;
+}
