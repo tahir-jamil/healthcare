@@ -3,9 +3,9 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 
 import { PagerModule } from "nativescript-pager/angular";
-import { BottomBarComponent } from "~/bottom-bar/bottom-bar.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { BottomBarComponent } from "./bottom-bar/bottom-bar.component";
 // tslint:disable-next-line:ordered-imports
 import { CoachComponent } from "./coach/coach.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";

@@ -38,39 +38,48 @@ export class BottomBarComponent implements OnInit {
 
     switch (this.activeIndex) {
       case 0: {
-      //   this.routerExtensions.navigate(["/dashboard"], {
-      //       transition: {
-      //       name: "fade",
-      //       curve: "linear"
-      //       }
-      //   });
-      // }
-      //         break;
-      // case 1: {
-      //   this.routerExtensions.navigate(["/inventory"], {
-      //       transition: {
-      //       name: "fade",
-      //       curve: "linear"
-      //       }
-      //   });
-      // }
-      //         break;
-      // case 2: {
-      //   this.routerExtensions.navigate(["/cart"], {
-      //       transition: {
-      //       name: "fade",
-      //       curve: "linear"
-      //       }
-      //   });
-      // }
-      //         break;
-      // case 3: {
-      //   this.routerExtensions.navigate(["/more"], {
-      //       transition: {
-      //       name: "fade",
-      //       curve: "linear"
-      //       }
-      //   });
+        this.routerExtensions.navigate(["/home"], {
+            transition: {
+            name: "fade",
+            curve: "linear"
+            }
+        });
+      }
+              break;
+      case 1: {
+        this.routerExtensions.navigate(["/timeline"], {
+            transition: {
+            name: "fade",
+            curve: "linear"
+            }
+        });
+      }
+              break;
+      case 2: {
+        this.routerExtensions.navigate(["/coach"], {
+            transition: {
+            name: "fade",
+            curve: "linear"
+            }
+        });
+      }
+              break;
+      case 3: {
+        this.routerExtensions.navigate(["/relax"], {
+            transition: {
+            name: "fade",
+            curve: "linear"
+            }
+        });
+      }
+              break;
+      case 4: {
+        this.routerExtensions.navigate(["/learn"], {
+            transition: {
+            name: "fade",
+            curve: "linear"
+            }
+        });
       }
               break;
       default:
