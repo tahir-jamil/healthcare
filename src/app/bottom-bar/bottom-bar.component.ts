@@ -47,7 +47,7 @@ export class BottomBarComponent implements OnInit {
       }
               break;
       case 1: {
-        this.routerExtensions.navigate(["/timeline"], {
+        this.routerExtensions.navigate(["home/timeline"], {
             transition: {
             name: "fade",
             curve: "linear"
@@ -56,7 +56,7 @@ export class BottomBarComponent implements OnInit {
       }
               break;
       case 2: {
-        this.routerExtensions.navigate(["/coach"], {
+        this.routerExtensions.navigate(["home/coach"], {
             transition: {
             name: "fade",
             curve: "linear"
@@ -65,7 +65,7 @@ export class BottomBarComponent implements OnInit {
       }
               break;
       case 3: {
-        this.routerExtensions.navigate(["/relax"], {
+        this.routerExtensions.navigate(["home/relax"], {
             transition: {
             name: "fade",
             curve: "linear"
