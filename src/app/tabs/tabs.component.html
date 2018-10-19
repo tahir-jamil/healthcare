@@ -1,0 +1,16 @@
+<GridLayout rows="*,auto" columns="*" class="page-background">
+
+    <Pager row="0" [items]="components" #pager [selectedIndex]="selectedIndex" (selectedIndexChange)="onIndexChanged($event)"
+        class="page-background">
+        <ng-template let-i="index" let-item="item">
+            <GridLayout backgroundColor="red">
+                <tu-tab-page [component]="item?.component"></tu-tab-page>
+            </GridLayout>
+        </ng-template>
+    </Pager>
+
+
+    <StackLayout row="1" class="alignScroll" *ngIf="getGrid == 'scroll'" verticalAlignemnt="top" orientation="horizontal">
+            <tu-bottom-bar></tu-bottom-bar>
+    </StackLayout>
+</GridLayout>

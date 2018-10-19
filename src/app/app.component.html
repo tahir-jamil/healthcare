@@ -7,10 +7,12 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
     <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer">
         <StackLayout row="0" class="sidedrawer-content" marginTop="20dp" >
 
-            <Label text="&#xe5cd;" horizontalAlignemnt="left" class="f-20 green text-left md-icon" textWrap="true"></Label>
+            <Label text="&#xe5cd;" (tap)="onCloseDrawerTap()" horizontalAlignemnt="left" class="f-20 green text-left md-icon" textWrap="true"></Label>
 
         </StackLayout>
     
+
+        
         <ScrollView row="1">
             <StackLayout class="sidedrawer-content">
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
