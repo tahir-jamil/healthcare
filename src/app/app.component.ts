@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nativescript-ui-sidedrawer";
@@ -11,17 +11,27 @@ import * as app from "tns-core-modules/application";
     selector: "ns-app",
     templateUrl: "app.component.html"
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
     @ViewChild(RadSideDrawerComponent) drawerComponent: RadSideDrawerComponent;
 
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
-
     private drawer: RadSideDrawer;
 
-    constructor(private router: Router, private routerExtensions: RouterExtensions) {
+    // tslint:disable-next-line:max-line-length
+    constructor(private router: Router, private routerExtensions: RouterExtensions, private _changeDetectionRef: ChangeDetectorRef) {
         // Use the component constructor to inject services.
+    }
+
+
+    ngAfterViewInit() {
+        this.drawer = this.drawerComponent.sideDrawer;
+        this._changeDetectionRef.detectChanges();
+    }
+
+    openDrawer() {
+        this.drawer.showDrawer();
     }
 
     onCloseDrawerTap() {

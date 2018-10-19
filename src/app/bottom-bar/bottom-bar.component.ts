@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import * as platformModule from "tns-core-modules/platform";
+import { TabsComponent } from "../tabs/tabs.component";
 
 @Component({
   selector: "tu-bottom-bar",
@@ -13,18 +14,18 @@ export class BottomBarComponent implements OnInit {
   @Input() visible = true;
 
   bottomMenu = [
-    { name: "Home" , icon: "&#xe80c;"},
-    { name: "Timeline" , icon: "&#xe916;"},
-    { name: "Cooch" , icon: "&#xe42e;"},
-    { name: "Relax" , icon: "&#xe80c;"},
-    { name: "Learn" , icon: "&#xe80c;" }
+    { name: "Home", icon: "&#xe80c;" },
+    { name: "Timeline", icon: "&#xe916;" },
+    { name: "Cooch", icon: "&#xe42e;" },
+    { name: "Relax", icon: "&#xe80c;" },
+    { name: "Learn", icon: "&#xe80c;" }
   ];
 
   bottomBarHeight: any = "";
   imgHeight: any = "";
   activeIndex = 0;
 
-  constructor(private routerExtensions: RouterExtensions) { }
+  constructor(private routerExtensions: RouterExtensions, private tabs: TabsComponent) { }
 
   ngOnInit() {
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
@@ -38,48 +39,23 @@ export class BottomBarComponent implements OnInit {
 
     switch (this.activeIndex) {
       case 0: {
-        this.routerExtensions.navigate(["/home"], {
-            transition: {
-            name: "fade",
-            curve: "linear"
-            }
-        });
+        this.tabs.tabIndexChanged(0);
       }
               break;
       case 1: {
-        this.routerExtensions.navigate(["home/timeline"], {
-            transition: {
-            name: "fade",
-            curve: "linear"
-            }
-        });
+        this.tabs.tabIndexChanged(1);
       }
               break;
       case 2: {
-        this.routerExtensions.navigate(["home/coach"], {
-            transition: {
-            name: "fade",
-            curve: "linear"
-            }
-        });
+        this.tabs.tabIndexChanged(2);
       }
               break;
       case 3: {
-        this.routerExtensions.navigate(["home/relax"], {
-            transition: {
-            name: "fade",
-            curve: "linear"
-            }
-        });
+        this.tabs.tabIndexChanged(3);
       }
               break;
       case 4: {
-        this.routerExtensions.navigate(["/learn"], {
-            transition: {
-            name: "fade",
-            curve: "linear"
-            }
-        });
+        this.tabs.tabIndexChanged(4);
       }
               break;
       default:

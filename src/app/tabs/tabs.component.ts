@@ -1,5 +1,11 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from "@angular/core";
 import * as platformModule from "tns-core-modules/platform";
+// tslint:disable-next-line:ordered-imports
+import { CoachComponent } from "../coach/coach.component";
+import { DashboardComponent } from "../dashboard/dashboard.component";
+import { LearnComponent } from "../learn/learn.component";
+import { RelaxComponent } from "../relax/relax.component";
+import { TimelineComponent } from "../timeline/timeline.component";
 
 @Component({
   selector: "tu-tabs",
@@ -17,8 +23,22 @@ export class TabsComponent implements OnInit {
     return this.selectedIndex;
   }
 
-  @Input() filters = [];
-  @Input() components = [];
+  @Input() filters = [
+    { name: "Home" },
+    { name: "Timeline" },
+    { name: "Coach" },
+    { name: "Relax" },
+    { name: "Learn" }
+  ];
+
+  @Input() components = [
+    { component: DashboardComponent },
+    { component: TimelineComponent },
+    { component: CoachComponent },
+    { component: RelaxComponent },
+    { component: LearnComponent }
+];
+
   @Input() type = "";
   gridLayout: string = "";
   activeTab = 0;

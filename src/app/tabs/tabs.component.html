@@ -3,7 +3,7 @@
     <Pager row="0" [items]="components" #pager [selectedIndex]="selectedIndex" (selectedIndexChange)="onIndexChanged($event)"
         class="page-background">
         <ng-template let-i="index" let-item="item">
-            <GridLayout backgroundColor="red">
+            <GridLayout backgroundColor="#ededf5" >
                 <tu-tab-page [component]="item?.component"></tu-tab-page>
             </GridLayout>
         </ng-template>

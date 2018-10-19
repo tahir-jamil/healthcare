@@ -6,6 +6,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeComponent } from "./home/home.component";
 import { LearnComponent } from "./learn/learn.component";
 import { RelaxComponent } from "./relax/relax.component";
+import { TabsComponent } from "./tabs/tabs.component";
 import { TimelineComponent } from "./timeline/timeline.component";
 
 const routes: Routes = [
@@ -14,18 +15,12 @@ const routes: Routes = [
         path: "home",
         component: HomeComponent,
         children: [
-            { path: "", component: DashboardComponent },
+            { path: "", component: TabsComponent },
             { path: "timeline", component: TimelineComponent },
             { path: "coach", component: CoachComponent },
             { path: "relax", component: RelaxComponent },
             { path: "learn", component: LearnComponent }
         ]
-
-        // { path: "timeline", component: TimelineComponent },
-        // { path: "coach", component: CoachComponent },
-        // { path: "relax", component: RelaxComponent },
-        // { path: "learn", component: LearnComponent }
-
     }];
 
 @NgModule({

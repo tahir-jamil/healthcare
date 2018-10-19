@@ -15,6 +15,7 @@ import { RelaxComponent } from "./relax/relax.component";
 import { TabPageComponent } from "./tabs/tab-page/tab-page.component";
 import { TabsComponent } from "./tabs/tabs.component";
 import { TimelineComponent } from "./timeline/timeline.component";
+import { PageServiceService } from "./page-service.service";
 
 @NgModule({
    bootstrap: [
@@ -45,6 +46,7 @@ import { TimelineComponent } from "./timeline/timeline.component";
       LearnComponent,
       DashboardComponent
    ],
+   providers: [PageServiceService],
    schemas: [
       NO_ERRORS_SCHEMA
    ]
