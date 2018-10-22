@@ -1,0 +1,38 @@
+.action-bar {
+    background: linear-gradient(to right, #6cd331, #00c55d);
+    color: white;
+}
+
+.green {
+    color: #00c55d;
+}
+
+.bottomBar {
+    /* background: linear-gradient(to right, #69d235, #00cb4f, #00c55d); */
+
+    background: linear-gradient(45deg,  #6cd331, #00c55d);
+}
+
+.f-40 {
+    font-size: 60dp;
+}
+
+.p-t-20 {
+    padding-top: 20dp;
+}
+
+.page-content {
+    padding: 7% 26% 15% 26%;
+}
+
+.alignItem {
+    margin: 1.3% 2% 1.3% 2%;
+}
+
+.f-12  {
+    font-size: 12dp;
+}
+
+.f-bold {
+    font-weight: bold;
+}

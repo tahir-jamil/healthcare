@@ -1,35 +1,45 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
-import * as app from "tns-core-modules/application";
+import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import * as platformModule from "tns-core-modules/platform";
+import { Page } from "tns-core-modules/ui/page/page";
+import { AppComponent } from "../app.component";
+import { PageServiceService } from "../page-service.service";
 
 @Component({
     selector: "Home",
     moduleId: module.id,
     templateUrl: "./home.component.html",
-    styleUrls: ["./home.component.css"]
+    styleUrls: ["./home.css"]
 })
 export class HomeComponent implements OnInit {
 
-    boxHeight: any = "";
-    boxWidth: any = "";
-
-
-    constructor() {
-        // Use the component constructor to inject providers.
+    get title() {
+        return this.pageService.title;
     }
 
-    ngOnInit(): void {
-        // Init your component properties here.
+    actionbar;
+    // @ViewChild('RadSideDrawerComponent') drawerComponent: RadSideDrawerComponent;
+    // private drawer: RadSideDrawer;
+    // tslint:disable-next-line:no-empty
+    constructor(private _page: Page, private pageService: PageServiceService, private pageComponent: AppComponent) {}
+    // tslint:disable-next-line:no-empty
+    ngOnInit(): void  {
+        this._page.actionBarHidden = true;
         const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
-        const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
-        this.boxHeight = deviceHeight * 0.20;
-        this.boxWidth =  deviceWidth * 0.38;
+
+        // tslint:disable-next-line:prefer-conditional-expression
+        if (platformModule.isIOS) {
+            this.actionbar = deviceHeight * 0.10;
+        } else {
+            this.actionbar = deviceHeight * 0.11;
+        }
+        // this.drawer = this.drawerComponent.sideDrawer;
     }
 
-    onDrawerButtonTap(): void {
-        const sideDrawer = <RadSideDrawer>app.getRootView();
-        sideDrawer.showDrawer();
+    openDrawer() {
+        // this.drawer.showDrawer();
+        this.pageComponent.openDrawer();
     }
+
 }
-
