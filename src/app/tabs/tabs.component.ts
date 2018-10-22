@@ -4,6 +4,7 @@ import * as platformModule from "tns-core-modules/platform";
 import { CoachComponent } from "../coach/coach.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
 import { LearnComponent } from "../learn/learn.component";
+import { PageServiceService } from "../page-service.service";
 import { RelaxComponent } from "../relax/relax.component";
 import { TimelineComponent } from "../timeline/timeline.component";
 
@@ -59,7 +60,7 @@ export class TabsComponent implements OnInit {
   @ViewChild("pager") pager: ElementRef;
 
   // tslint:disable-next-line:no-empty
-  constructor() {
+  constructor(private pageService: PageServiceService) {
   }
 
   ngOnInit(): void {
@@ -88,6 +89,31 @@ export class TabsComponent implements OnInit {
   tabIndexChanged(newIndex) {
     console.log("new lsdjflsd " + newIndex);
     this.selectedIndex = newIndex;
+    console.log("index is changed" + this.selectedIndex);
+    switch (newIndex) {
+      case 0: {
+        this.pageService.title = "Home";
+      }
+              break;
+      case 1: {
+        this.pageService.title = "Timeline";
+      }
+              break;
+      case 2: {
+        this.pageService.title = "Coach";
+      }
+              break;
+      case 3: {
+        this.pageService.title = "Relax";
+      }
+              break;
+      case 4: {
+        this.pageService.title = "Learn";
+      }
+              break;
+      default:
+        break;
+    }
   }
 
   loadedImage($event) {
@@ -98,6 +124,36 @@ export class TabsComponent implements OnInit {
     debugObj($event);
     this.latestReceivedIndex = $event.value;
     this.selectedIndex = $event.value;
+
+    switch (this.latestReceivedIndex) {
+      case 0: {
+        this.pageService.title = "Home";
+
+      }
+              break;
+      case 1: {
+        this.pageService.title = "Timeline";
+
+      }
+              break;
+      case 2: {
+        this.pageService.title = "Coach";
+
+      }
+              break;
+      case 3: {
+        this.pageService.title = "Relax";
+
+      }
+              break;
+      case 4: {
+        this.pageService.title = "Learn";
+
+      }
+              break;
+      default:
+        break;
+    }
   }
 
   pageChanged(index: number) {

@@ -10,7 +10,7 @@
     </Pager>
 
 
-    <StackLayout row="1" class="alignScroll" *ngIf="getGrid == 'scroll'" verticalAlignemnt="top" orientation="horizontal">
-            <tu-bottom-bar></tu-bottom-bar>
+    <StackLayout row="1" class="bottomBar" *ngIf="getGrid == 'scroll'" verticalAlignemnt="top" orientation="horizontal">
+            <tu-bottom-bar [currentIndex]="selectedIndex"></tu-bottom-bar>
     </StackLayout>
 </GridLayout>

@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
 import * as platformModule from "tns-core-modules/platform";
+import { PageServiceService } from "../page-service.service";
 import { TabsComponent } from "../tabs/tabs.component";
 
 @Component({
@@ -9,9 +10,10 @@ import { TabsComponent } from "../tabs/tabs.component";
   styleUrls: ["./bottom-bar.component.css"],
   moduleId: module.id
 })
-export class BottomBarComponent implements OnInit {
+export class BottomBarComponent implements OnInit, OnChanges {
 
   @Input() visible = true;
+  @Input() currentIndex = 0;
 
   bottomMenu = [
     { name: "Home", icon: "&#xe80c;" },
@@ -25,12 +27,19 @@ export class BottomBarComponent implements OnInit {
   imgHeight: any = "";
   activeIndex = 0;
 
-  constructor(private routerExtensions: RouterExtensions, private tabs: TabsComponent) { }
+  constructor(private pageService: PageServiceService, private tabs: TabsComponent) { }
 
   ngOnInit() {
     const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.imgHeight = deviceHeight * 0.10;
+  }
+
+  // tslint:disable-next-line:no-empty
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.currentIndex) {
+      this.activeIndex = this.currentIndex;
+    }
   }
 
   onChangeIndex(args) {

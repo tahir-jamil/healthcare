@@ -5,7 +5,9 @@ import { Injectable } from "@angular/core";
 })
 export class PageServiceService {
 
-// tslint:disable-next-line:no-empty
-constructor() { }
+  title: string = "Home";
+  currentBottomMenuIndex: number = 0;
+  // tslint:disable-next-line:no-empty
+  constructor() { }
 
 }
