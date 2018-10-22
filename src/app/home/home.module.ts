@@ -6,6 +6,7 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 import { NgShadowModule } from "nativescript-ng-shadow";
 
+
 @NgModule({
     imports: [
         NativeScriptCommonModule,
@@ -15,6 +16,7 @@ import { NgShadowModule } from "nativescript-ng-shadow";
     declarations: [
         HomeComponent,
         BottomBarComponent
+        
     ],
     schemas: [
         NO_ERRORS_SCHEMA

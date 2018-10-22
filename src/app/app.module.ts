@@ -4,21 +4,23 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { ActOfKindnessComponent } from './act-of-kindness/act-of-kindness.component';
 
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
-    imports: [
-        AppRoutingModule,
-        NativeScriptModule,
-        NativeScriptUISideDrawerModule
-    ],
-    declarations: [
-        AppComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+   bootstrap: [
+      AppComponent
+   ],
+   imports: [
+      AppRoutingModule,
+      NativeScriptModule,
+      NativeScriptUISideDrawerModule
+   ],
+   declarations: [
+      AppComponent,
+      ActOfKindnessComponent
+   ],
+   schemas: [
+      NO_ERRORS_SCHEMA
+   ]
 })
 export class AppModule { }
