@@ -1,9 +1,9 @@
-<GridLayout >
+<GridLayout (loaded)="onloaded()">
 
-  <GridLayout class="page-content" rows="*,auto" columns="*">
+  <!-- <GridLayout [visibility]="dashboardVisiblity ? 'visible' : 'collapsed'" class="page-content" rows="*,auto" columns="*">
 
-    <WrapLayout>
-      <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+    <WrapLayout >
+      <GridLayout backgroundColor="white" class="alignItem" (tap)="positiveEmotions()" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
         <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
           <Image src="res://positiveemotion" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
           <Label text="Positive Emotions" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
@@ -40,7 +40,110 @@
         </StackLayout>
       </GridLayout>
     </WrapLayout>
-    
+
+  </GridLayout> -->
+  <!-- [visibility]="!dashboardVisiblity ? 'visible' : 'collapsed'"  -->
+  <GridLayout  rows="auto,*" columns="*" class="alginKind">
+
+      <Image src="res://actofkindnessicon" [width]="actImageWidth" [height]="actImageHeight"></Image>
+      
+      <StackLayout row="1" marginTop="20%">
+          
+      <GridLayout  rows="auto,auto" >
+        <GridLayout  (tap)="onloaded()" rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="red">
+          <Label text="This Help to"  textWrap="true"></Label>
+          <Label text="icon" col="1" (tap)="iconTap()" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout  rows="*" row="1" backgroundColor="white" columns="*" #label>
+          <StackLayout>
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+          </StackLayout> 
+        </GridLayout>
+      </GridLayout>
+
+      <GridLayout  rows="auto,auto" >
+        <GridLayout  (tap)="onloaded()" rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="red">
+          <Label text="This Help to"  textWrap="true"></Label>
+          <Label text="icon" col="1" (tap)="iconTap()" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout  rows="*" row="1" backgroundColor="white" columns="*" #label>
+          <StackLayout>
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+          </StackLayout> 
+        </GridLayout>
+      </GridLayout>
+      <GridLayout  rows="auto,auto" >
+        <GridLayout  (tap)="onloaded()" rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="red">
+          <Label text="This Help to"  textWrap="true"></Label>
+          <Label text="icon" col="1" (tap)="iconTap()" textWrap="true"></Label>
+        </GridLayout>
+        <GridLayout  rows="*" row="1" backgroundColor="white" columns="*" #label>
+          <StackLayout>
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+
+            <Label verticalAlignment='bottom' class='p-3-3'>
+              <FormattedString>
+                <Span text='dot' class=''></Span>
+                <Span text='Feel more positive emotions' ></Span>
+              </FormattedString>
+            </Label>
+          </StackLayout> 
+        </GridLayout>
+      </GridLayout>
+   
+    </StackLayout>
   </GridLayout>
 
+
 </GridLayout>
+

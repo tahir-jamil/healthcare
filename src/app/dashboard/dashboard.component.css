@@ -36,3 +36,31 @@
 .f-bold {
     font-weight: bold;
 }
+
+
+/* act of kindness */
+
+.alginKind {
+    padding: 20% 14% 10% 20%;
+}
+
+.alignTitle {
+    padding: 12% 14% 12% 14%;
+}
+
+.p-3-3 {
+    padding: 10% 14% 10% 14%;
+}
+
+
+.wrapper {
+    text-align: center;
+}
+.thelabel1 {
+    background-color: red;
+    color: white;
+}
+.thelabel2 {
+    background-color: green;
+    color: white;
+}
