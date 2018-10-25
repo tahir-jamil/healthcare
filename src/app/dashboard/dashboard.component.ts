@@ -6,6 +6,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 import * as platformModule from "tns-core-modules/platform";
 import { VirtualTimeScheduler } from "rxjs";
+import { Color } from "tns-core-modules/color/color";
 
 @Component({
   selector: "ns-dashboard",
@@ -45,6 +46,9 @@ export class DashboardComponent implements OnInit {
   @ViewChild("iconOne") iconOne: ElementRef;
   @ViewChild("iconTwo") iconTwo: ElementRef;
   @ViewChild("iconThree") iconThree: ElementRef;
+  @ViewChild("headingOne") headingOne: ElementRef;
+  @ViewChild("headingTwo") headingTwo: ElementRef;
+  @ViewChild("headingThree") headingThree: ElementRef;
   getVisiblity = "hidden";
   labelOne = 0;
   labelTwo = 0;
@@ -92,6 +96,7 @@ export class DashboardComponent implements OnInit {
     // }
 
 
+
     switch (id) {
       case 1:
         {
@@ -99,16 +104,25 @@ export class DashboardComponent implements OnInit {
             this.activeLabelOne = true;
             this.showLabel(id);
             this.iconOne.nativeElement.animate({
-              rotate: -180,
+              rotate: 90,
               duration: 400,
-          });
+            });
+            this.headingOne.nativeElement.animate({
+              backgroundColor: new Color("rgb(244, 244, 244)"),
+              duration: 400,
+            });
+
           } else {
             this.activeLabelOne = false;
             this.hideLabel(id);
             this.iconOne.nativeElement.animate({
-              rotate: 180,
+              rotate: 0,
               duration: 400,
-          });
+            });
+            this.headingOne.nativeElement.animate({
+              backgroundColor: new Color("#ffffff"),
+              duration: 400,
+            });
           }
         }
         break;
@@ -117,16 +131,25 @@ export class DashboardComponent implements OnInit {
           this.activeLabelTwo = true;
           this.showLabel(id);
           this.iconTwo.nativeElement.animate({
-            rotate: -180,
+            rotate: 90,
             duration: 400,
-        });
+          });
+          this.headingTwo.nativeElement.animate({
+            backgroundColor: new Color("rgb(244, 244, 244)"),
+            duration: 400,
+          });
+
         } else {
           this.activeLabelTwo = false;
           this.hideLabel(id);
           this.iconTwo.nativeElement.animate({
-            rotate: -180,
+            rotate: 0,
             duration: 400,
-        });
+          });
+          this.headingTwo.nativeElement.animate({
+            backgroundColor: new Color("#ffffff"),
+            duration: 400,
+          });
         }
       }
         break;
@@ -135,16 +158,25 @@ export class DashboardComponent implements OnInit {
           this.activeLabelThree = true;
           this.showLabel(id);
           this.iconThree.nativeElement.animate({
-            rotate: -180,
+            rotate: 90,
             duration: 400,
-        });
+          });
+          this.headingThree.nativeElement.animate({
+            backgroundColor: new Color("rgb(244, 244, 244)"),
+            duration: 400,
+          });
+          
         } else {
           this.activeLabelThree = false;
           this.hideLabel(id);
           this.iconThree.nativeElement.animate({
-            rotate: -180,
+            rotate: 0,
             duration: 400,
-        });
+          });
+          this.headingThree.nativeElement.animate({
+            backgroundColor: new Color("#ffffff"),
+            duration: 400,
+          });
         }
       }
         break;
@@ -178,25 +210,25 @@ export class DashboardComponent implements OnInit {
             if (this.labelOne !== 0) {
               this.hideLabel(id);
             }
-          }, 3);
+          }, 2.2);
         }
         break;
       case 2: {
         setTimeout(() => {
           this.labelTwo = this.labelTwo - 1;
-          if (this.labelTwo !== 0 ) {
+          if (this.labelTwo !== 0) {
             this.hideLabel(id);
           }
-        }, 3);
+        }, 2.2);
       }
         break;
       case 3: {
         setTimeout(() => {
           this.labelThree = this.labelThree - 1;
-          if (this.labelThree !== 0 ) {
+          if (this.labelThree !== 0) {
             this.hideLabel(id);
           }
-        }, 3);
+        }, 2.2);
       }
         break;
 
