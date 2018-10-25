@@ -5,6 +5,7 @@ import { Label } from "ui/label";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 import * as platformModule from "tns-core-modules/platform";
+import { VirtualTimeScheduler } from "rxjs";
 
 @Component({
   selector: "ns-dashboard",
@@ -16,18 +17,18 @@ import * as platformModule from "tns-core-modules/platform";
 
 export class DashboardComponent implements OnInit {
 
-  heroes =  [
+  heroes = [
     {
-        name: "Windstorm",
-        state: "inactive"
+      name: "Windstorm",
+      state: "inactive"
     },
     {
-        name: "Batman",
-        state: "active"
+      name: "Batman",
+      state: "active"
     }
-];
+  ];
 
-  @ViewChild("label") label: ElementRef;
+
   boxHeight: any = "";
   boxWidth: any = "";
 
@@ -40,14 +41,23 @@ export class DashboardComponent implements OnInit {
   actImageHeight: any = "";
   titleActHeight: any = "";
 
-  labelHeight: any = "";
+  @ViewChild("labelThree") labelThreeRef: ElementRef;
+  @ViewChild("iconOne") iconOne: ElementRef;
+  @ViewChild("iconTwo") iconTwo: ElementRef;
+  @ViewChild("iconThree") iconThree: ElementRef;
+  getVisiblity = "hidden";
+  labelOne = 0;
+  labelTwo = 0;
+  labelThree = 0;
+  maxlabelHeight = 0;
+
+  activeLabelOne = false;
+  activeLabelTwo = false;
+  activeLabelThree = false;
 
   // tslint:disable-next-line:no-empty
   constructor() { }
 
-  toggleState(hero) {
-    hero.state = hero.state === "active" ? "inactive" : "active";
-  }
   // tslint:disable-next-line:no-empty
 
   ngOnInit(): void {
@@ -61,42 +71,177 @@ export class DashboardComponent implements OnInit {
 
     this.actImageWidth = deviceHeight * 0.15;
     this.actImageHeight = deviceWidth * 0.22;
-    this.titleActHeight = deviceHeight * 0.08;
-
-  }
-
-  onloaded() {
-    this.labelHeight = this.label.nativeElement.getMeasuredHeight();
+    this.titleActHeight = deviceHeight * 0.075;
   }
 
   positiveEmotions() {
     this.dashboardVisiblity = false;
   }
 
-  iconTap() {
-    this.hideLabel();
+
+  onLoaded() {
   }
 
-  hideLabel() {
-    this.label.nativeElement.animate({
-      scale: { x: 1, y: 0 },
-      duration: 500
-    }).then(() => {
-      console.log("Animation finished.");
-    }).catch((e) => {
-      console.log(e.message);
-    });
+
+  // this.hideLabel();
+  iconTap(id) {
+    this.maxlabelHeight = this.labelThreeRef.nativeElement.getMeasuredHeight() + 30;
+
+    // if (this.activeLabelThree == false){
+    //     this.activeLabelThree == true;
+    // }
+
+
+    switch (id) {
+      case 1:
+        {
+          if (this.activeLabelOne == false) {
+            this.activeLabelOne = true;
+            this.showLabel(id);
+            this.iconOne.nativeElement.animate({
+              rotate: -180,
+              duration: 400,
+          });
+          } else {
+            this.activeLabelOne = false;
+            this.hideLabel(id);
+            this.iconOne.nativeElement.animate({
+              rotate: 180,
+              duration: 400,
+          });
+          }
+        }
+        break;
+      case 2: {
+        if (this.activeLabelTwo == false) {
+          this.activeLabelTwo = true;
+          this.showLabel(id);
+          this.iconTwo.nativeElement.animate({
+            rotate: -180,
+            duration: 400,
+        });
+        } else {
+          this.activeLabelTwo = false;
+          this.hideLabel(id);
+          this.iconTwo.nativeElement.animate({
+            rotate: -180,
+            duration: 400,
+        });
+        }
+      }
+        break;
+      case 3: {
+        if (this.activeLabelThree == false) {
+          this.activeLabelThree = true;
+          this.showLabel(id);
+          this.iconThree.nativeElement.animate({
+            rotate: -180,
+            duration: 400,
+        });
+        } else {
+          this.activeLabelThree = false;
+          this.hideLabel(id);
+          this.iconThree.nativeElement.animate({
+            rotate: -180,
+            duration: 400,
+        });
+        }
+      }
+        break;
+
+      default:
+        break;
+    }
+
   }
 
-  showLabel() {
-    this.label.nativeElement.animate({
-      scale: { x: 1, y: 1 },
-      duration: 500
-    }).then(() => {
-      console.log("Animation finished.");
-    }).catch((e) => {
-      console.log(e.message);
-    });
+
+  get getlabelOne() {
+    return this.labelOne;
+  }
+
+  get getlabelTwo() {
+    return this.labelTwo;
+  }
+
+  get getlabelThree() {
+    return this.labelThree;
+  }
+
+  hideLabel(id) {
+
+    switch (id) {
+      case 1:
+        {
+          setTimeout(() => {
+            this.labelOne = this.labelOne - 1;
+            if (this.labelOne !== 0) {
+              this.hideLabel(id);
+            }
+          }, 3);
+        }
+        break;
+      case 2: {
+        setTimeout(() => {
+          this.labelTwo = this.labelTwo - 1;
+          if (this.labelTwo !== 0 ) {
+            this.hideLabel(id);
+          }
+        }, 3);
+      }
+        break;
+      case 3: {
+        setTimeout(() => {
+          this.labelThree = this.labelThree - 1;
+          if (this.labelThree !== 0 ) {
+            this.hideLabel(id);
+          }
+        }, 3);
+      }
+        break;
+
+      default:
+        break;
+    }
+
+  }
+
+
+  showLabel(id) {
+    switch (id) {
+      case 1:
+        {
+          setTimeout(() => {
+            this.labelOne = this.labelOne + 4;
+            if (this.labelOne <= this.maxlabelHeight / 3) {
+              this.showLabel(id);
+            }
+          }, 10);
+        }
+        break;
+      case 2: {
+        setTimeout(() => {
+          this.labelTwo = this.labelTwo + 4;
+          if (this.labelTwo <= this.maxlabelHeight / 3) {
+            this.showLabel(id);
+          }
+        }, 10);
+      }
+        break;
+      case 3: {
+        setTimeout(() => {
+          this.labelThree = this.labelThree + 4;
+          if (this.labelThree <= this.maxlabelHeight / 3) {
+            this.showLabel(id);
+          }
+        }, 10);
+      }
+        break;
+
+      default:
+        break;
+    }
+
   }
 
 }
