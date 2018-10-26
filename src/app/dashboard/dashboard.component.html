@@ -2,50 +2,52 @@
 
   <GridLayout (loaded)="onLoaded()">
 
-    <!-- <GridLayout [visibility]="dashboardVisiblity ? 'visible' : 'collapsed'" class="page-content" rows="*,auto" columns="*">
+    <GridLayout [visibility]="dashboardVisiblity ? 'visible' : 'collapsed'" class="page-content" rows="*,auto" columns="*">
 
-    <WrapLayout >
-      <GridLayout backgroundColor="white" class="alignItem" (tap)="positiveEmotions()" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
-        <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
-          <Image src="res://positiveemotion" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
-          <Label text="Positive Emotions" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
-        </StackLayout>
-      </GridLayout>
-      <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
-        <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
-          <Image src="res://engagement" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
-          <Label text="Engagement (flow)" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
-        </StackLayout>
-      </GridLayout>
-      <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
-        <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
-          <Image src="res://positiverelationship" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
-          <Label text="Positive Relationships" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
-        </StackLayout>
-      </GridLayout>
-      <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
-        <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
-          <Image src="res://meningfulness" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
-          <Label text="Meaningfulness" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
-        </StackLayout>
-      </GridLayout>
-      <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
-        <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
-          <Image src="res://accomplishment" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
-          <Label text="Accomplishment" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
-        </StackLayout>
-      </GridLayout>
-      <GridLayout backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
-        <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
-          <Image src="res://slepp" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
-          <Label text="Sleep" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
-        </StackLayout>
-      </GridLayout>
-    </WrapLayout>
+      <WrapLayout>
+        <GridLayout horzontalAlignemnt="middle" backgroundColor="white" class="alignItem" (tap)="positiveEmotions()" verticalAlignment="middle"
+          [height]="boxHeight" [width]="boxWidth">
+          <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+            <Image src="res://positiveemotion" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
+            <Label text="Positive Emotions" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout horzontalAlignemnt="middle" backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+          <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+            <Image src="res://engagement" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
+            <Label text="Engagement (flow)" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout  horzontalAlignemnt="middle" backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+          <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+            <Image src="res://positiverelationship" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
+            <Label text="Positive Relationships" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+          </StackLayout>
+        </GridLayout>
 
-  </GridLayout> -->
-    <!-- [visibility]="!dashboardVisiblity ? 'visible' : 'collapsed'"  -->
-    <GridLayout rows="auto,*" columns="*" class="alginKind">
+        <GridLayout horzontalAlignemnt="middle" backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+          <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+            <Image src="res://meningfulness" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
+            <Label text="Meaningfulness" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout horzontalAlignemnt="middle" backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+          <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+            <Image src="res://accomplishment" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
+            <Label text="Accomplishment" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+          </StackLayout>
+        </GridLayout>
+        <GridLayout horzontalAlignemnt="middle" backgroundColor="white" class="alignItem" verticalAlignment="middle" [height]="boxHeight" [width]="boxWidth">
+          <StackLayout verticalAlignemnt="middle" class="p-t-20" horizontalAlignment="center">
+            <Image src="res://slepp" [width]="imageWidth" [height]="imageHeight" stretch="aspectFit"></Image>
+            <Label text="Sleep" class="p-t-20 f-12 f-bold text-center" textWrap="true"></Label>
+          </StackLayout>
+        </GridLayout>
+      </WrapLayout>
+
+    </GridLayout>
+
+    <GridLayout rows="auto,*" columns="*" [visibility]="!dashboardVisiblity ? 'visible' : 'collapsed'" class="alginKind">
 
       <Image src="res://actofkindnessicon" [width]="actImageWidth" [height]="actImageHeight"></Image>
 
@@ -53,32 +55,33 @@
 
         <GridLayout rows="auto,auto">
 
-          <GridLayout  #headingOne rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="#ffffff">
+          <GridLayout #headingOne rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle"
+            backgroundColor="#ffffff">
             <Label text="This Help to" textWrap="true"></Label>
-            <Label text="&#xe315;"  #iconOne col="1" class="md-icon icon-color f-25" (tap)="iconTap(1)" textWrap="true"></Label>
+            <Label text="&#xe315;" #iconOne col="1" class="md-icon icon-color f-25" (tap)="iconTap(1)" textWrap="true"></Label>
           </GridLayout>
           <GridLayout #labelOne [height]="getlabelOne" rows="*" row="1" backgroundColor="white" columns="*">
             <StackLayout>
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
@@ -88,32 +91,33 @@
         </GridLayout>
 
         <GridLayout rows="auto,auto" marginTop="20dp">
-          <GridLayout #headingTwo rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="#ffffff">
+          <GridLayout #headingTwo rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle"
+            backgroundColor="#ffffff">
             <Label text="This Help to" textWrap="true"></Label>
-            <Label text="&#xe315;"  #iconTwo col="1" class="md-icon icon-color f-25" (tap)="iconTap(2)" textWrap="true"></Label>
+            <Label text="&#xe315;" #iconTwo col="1" class="md-icon icon-color f-25" (tap)="iconTap(2)" textWrap="true"></Label>
           </GridLayout>
           <GridLayout #labelTwo [height]="getlabelTwo" rows="*" row="1" backgroundColor="white" columns="*">
             <StackLayout>
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
@@ -123,32 +127,33 @@
 
 
         <GridLayout rows="auto,auto" marginTop="20dp">
-          <GridLayout #headingThree rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="#ffffff">
+          <GridLayout #headingThree rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle"
+            backgroundColor="#ffffff">
             <Label text="This Help to" textWrap="true"></Label>
-            <Label text="&#xe315;"  #iconThree col="1" class="md-icon icon-color f-25" (tap)="iconTap(3)" textWrap="true"></Label>
+            <Label text="&#xe315;" #iconThree col="1" class="md-icon icon-color f-25" (tap)="iconTap(3)" textWrap="true"></Label>
           </GridLayout>
           <GridLayout [height]="getlabelThree" rows="*" row="1" backgroundColor="white" columns="*">
             <StackLayout>
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
@@ -158,33 +163,34 @@
 
 
 
-        <GridLayout rows="auto,auto" marginTop="20dp" visibility="hidden" >
-          <GridLayout #headingThree rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle" backgroundColor="#ffffff">
+        <GridLayout rows="auto,auto" marginTop="20dp" visibility="hidden">
+          <GridLayout #headingThree rows="*" columns="*,auto" [height]="titleActHeight" class="alignTitle"
+            backgroundColor="#ffffff">
             <Label text="This Help to" textWrap="true"></Label>
-            <Label text="&#xe315;"  #iconThree col="1" class="md-icon icon-color f-25" (tap)="iconTap(3)" textWrap="true"></Label>
+            <Label text="&#xe315;" #iconThree col="1" class="md-icon icon-color f-25" (tap)="iconTap(3)" textWrap="true"></Label>
           </GridLayout>
-          <GridLayout  #labelThree visibility="hidden" rows="*" row="1" backgroundColor="white" columns="*">
+          <GridLayout #labelThree visibility="hidden" rows="*" row="1" backgroundColor="white" columns="*">
             <StackLayout>
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
 
               <Label verticalAlignment='bottom' class='p-3-3'>
                 <FormattedString>
-                  <Span text="&#xe3a6;" class="md-icon  f-15" ></Span>
-                  <Span text="    " ></Span>
+                  <Span text="&#xe3a6;" class="md-icon  f-15"></Span>
+                  <Span text="    "></Span>
                   <Span text='Feel more positive emotions'></Span>
                 </FormattedString>
               </Label>
